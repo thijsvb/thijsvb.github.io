@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<title>Processing.js thingie</title>
+	</head>
+	
+	<body>
+		<h2>I made this thing in Processing!</h2>
+		<script src="processing.js"></script>
+		<script type="text/processing" data-processing-target="mycanvas">
+			
+		void setup(){
+		size(1000,500);
+		noStroke();
+		fill(0,128,0);
+		}
+
+		void draw(){
+		float k = 0;
+		background(0);
+		k = mouseY/60;
+		ellipse(mouseX + random(-k,k), mouseY + random(-k,k), 50, 50);
+		}
+		</script>
+		<canvas id="mycanvas"></canvas>
+		<a href="../index.html">Home</a>
+	</body>
+</html>
