@@ -31,7 +31,7 @@ void draw(){
     v.set(v.x + pv,-v.y);
     b.set(b.x,constrain(b.y,26,height-46));
   }
-  else if(b.y >= height-45){
+  else if(b.y >= height-25){
     b.set(width/2,height/2);
     v.set(0,4);
     ++s;
