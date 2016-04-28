@@ -9,7 +9,7 @@
                    1.DropOMG.png,
                    2.Background.png,
                    3a.GreatDevourer.png,
-                   Background.png,
+                   3b.Background.png,
                    3a.Background.png,
                    4.Porfo!.jpg,
                    intro.txt,
