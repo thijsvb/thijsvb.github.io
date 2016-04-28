@@ -7,7 +7,7 @@ int levelOne(){
     fill(255);
     textSize(20);
     textAlign(LEFT);
-    text(introText[0]+'\n'+introText[1]+'\n'+introText[2],5,25,width-10,height-10);
+    text(introText[0]+"\\n"+introText[1]+"\\n"+introText[2],5,25,width-10,height-10);
     if(mousePressed){
       intro = false;
     }

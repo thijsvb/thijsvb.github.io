@@ -30,7 +30,7 @@ int levelSix(){
           background(0);
           fill(255);
           textSize(20);textAlign(CENTER);
-          text(end[0]+'\n'+end[1]+'\n'+end[2],width/2,height/2);
+          text(end[0]+"\\n"+end[1]+"\\n"+end[2],width/2,height/2);
         }
         else if(millis()-time > 30000){
           color c = color(random(255),random(255),random(255));
