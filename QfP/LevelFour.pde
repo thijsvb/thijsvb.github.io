@@ -1,6 +1,6 @@
 int levelFour(){
   if(intro){
-    x = -1069/3;
+    x = (int)(-1069/3);
     intro = false;
   }
   else{

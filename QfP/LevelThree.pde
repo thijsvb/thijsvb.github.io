@@ -1,6 +1,6 @@
 int levelThree(){
   if(intro){
-    x = -1069/3;
+    x = (int)(-1069/3);
     
     String[] introText = loadStrings("level3.txt");
     background(0);

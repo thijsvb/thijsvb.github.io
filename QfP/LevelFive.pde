@@ -1,7 +1,7 @@
 int levelFive(){
   if(drawga){
     if(intro){
-      x = -1069/3;
+      x = (int)(-1069/3);
       time = millis();
       intro = false;
     }
