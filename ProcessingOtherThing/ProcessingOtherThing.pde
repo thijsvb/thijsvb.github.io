@@ -1,6 +1,5 @@
 void setup(){
-//  size(1000,500);
-  fullScreen();
+  size(1000,500);
   noFill();
   stroke(0,128,0);
 }
