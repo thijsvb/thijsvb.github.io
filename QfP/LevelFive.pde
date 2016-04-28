@@ -44,7 +44,7 @@ int levelFive(){
    }
    else{
      if(intro){
-      x = -1069/3;
+      x = (int)(-1069/3);
       time2 = millis();
       question = 10;
       intro = false;
