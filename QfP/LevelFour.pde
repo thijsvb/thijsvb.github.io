@@ -19,14 +19,14 @@ int levelFour(){
           background(0);
           fill(255);
           textSize(20);textAlign(CENTER);
-          text(end[0]+"\\n"+end[1]+"\\n"+end[2],width/2,height/2);
+          text(end[0]+"\n"+end[1]+"\n"+end[2],width/2,height/2);
          }
         else{
           String[] end = loadStrings("3b.bad.txt");
           background(0);
           fill(255);
           textSize(20);textAlign(CENTER);
-          text(end[0]+"\\n"+end[1]+"\\n"+end[2],width/2,height/2);
+          text(end[0]+"\n"+end[1]+"\n"+end[2],width/2,height/2);
         }
       }
       else if(millis()-time > 18000){
