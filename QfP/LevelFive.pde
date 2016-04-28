@@ -54,7 +54,7 @@ int levelFive(){
       fill(255);
       image(Devourer,width-692/2,0,629/2,411/2);
       image(player,x,height-240,1069/3,612/3);
-      if(x != 10){
+      if(x < 10){
         ++x;
       }
       else{
