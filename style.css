@@ -1,0 +1,13 @@
+body {
+     background-color: #202020;
+     color: #b0b0b0;
+     font-family: "Trebuchet MS";
+     text-align:center;
+}
+h1 {
+  color:#00b000;
+}
+a {
+   color:#ffffff;
+   text-decoration:none;
+}
