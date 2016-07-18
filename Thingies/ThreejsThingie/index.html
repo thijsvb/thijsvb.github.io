@@ -24,10 +24,10 @@
 
       var renderer = new THREE.WebGLRenderer();
       renderer.setSize( window.innerWidth, window.innerHeight );
+			var element = renderer.domElement;
+      document.getElementById('webglviewer').appendChild( element );
 
-      document.getElementById('webglviewer').appendChild( renderer.domElement );
-
-			effect = new THREE.StereoEffect(renderer);
+			var effect = new THREE.StereoEffect(renderer);
 
       var geometry = new THREE.BoxGeometry( 1, 1, 1 );
       var material = new THREE.MeshBasicMaterial( { color: 0x00ff00, wireframe: true } );
