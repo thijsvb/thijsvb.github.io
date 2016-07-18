@@ -9,6 +9,8 @@
 		</style>
 	</head>
 	<body>
+		<div id="webglviewer"></div>
+
 		<script src="../../js/three.js"></script>
 		<script src="../../js/StereoEffect.js"></script>
 		<script src="../../js/DeviceOrientationControls.js"></script>
@@ -22,7 +24,8 @@
 
       var renderer = new THREE.WebGLRenderer();
       renderer.setSize( window.innerWidth, window.innerHeight );
-      document.body.appendChild( renderer.domElement );
+
+      document.getElementById('webglviewer').appendChild( renderer.domElement );
 
 			effect = new THREE.StereoEffect(renderer);
 
