@@ -24,6 +24,8 @@
       renderer.setSize( window.innerWidth, window.innerHeight );
       document.body.appendChild( renderer.domElement );
 
+			var effect = new THREE.StereoEffect(renderer);
+
       var geometry = new THREE.BoxGeometry( 1, 1, 1 );
       var material = new THREE.MeshBasicMaterial( { color: 0x00ff00, wireframe: true } );
       var cube = new THREE.Mesh( geometry, material );
