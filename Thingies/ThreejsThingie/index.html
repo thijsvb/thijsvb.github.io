@@ -60,6 +60,23 @@
       cube.rotation.x = Math.PI;
       scene.add( cube );
 
+			function update(dt) {
+        resize();
+        camera.updateProjectionMatrix();
+        controls.update(dt);
+      }
+
+			function fullscreen() {
+        if (container.requestFullscreen) {
+          container.requestFullscreen();
+        } else if (container.msRequestFullscreen) {
+          container.msRequestFullscreen();
+        } else if (container.mozRequestFullScreen) {
+          container.mozRequestFullScreen();
+        } else if (container.webkitRequestFullscreen) {
+          container.webkitRequestFullscreen();
+        }
+      }
 
       function render() {
       	requestAnimationFrame( render );
