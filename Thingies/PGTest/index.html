@@ -21,7 +21,7 @@
 		<script id="script1" type="text/javascript">
 
 		function sketch(processing){
-			var info;
+			var info[];
 			processing.setup = function(){
 				info = processing.loadStrings("info.txt");
 			};
@@ -30,6 +30,9 @@
 				processing.noStroke();
 				processing.fill(255);
 				processing.rect(processing.width/20, processing.height/3, processing.width*9/10, processing.height, processing.width/40);
+				processing.fill(66, 106, 108);
+				processing.textAlign(CENTER,CENTER);
+				processing.text(info[0], processing.width/2, processing.height/2);
 			};
 		}
 
