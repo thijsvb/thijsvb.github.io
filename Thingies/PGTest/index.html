@@ -31,8 +31,11 @@
 				processing.fill(255);
 				processing.rect(processing.width/20, processing.height/3, processing.width*9/10, processing.height, processing.width/40);
 				processing.fill(66, 106, 108);
-				processing.textAlign(processing.CENTER, processing.CENTER);
-				processing.text(info[0], processing.width/2, processing.height/2);
+				fill(66, 106, 108);
+		    processing.textAlign(processing.CENTER, processing.TOP);
+		    processing.textSize(processing.width/20);
+		    processing.text("NEARBY", processing.width/2, processing.height/3+processing.width/20);
+		    processing.rect(processing.width/3, processing.height/3+processing.width*3/20, processing.width/3, 10, 5);
 			};
 		}
 
