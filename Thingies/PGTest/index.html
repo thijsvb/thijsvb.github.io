@@ -21,6 +21,10 @@
 		<script id="script1" type="text/javascript">
 
 		function sketch(processing){
+			var info;
+			processing.setup = function(){
+				info = processing.loadStrings("info.txt");
+			};
 			processing.draw = function(){
 				processing.background(0,255,128);
 				processing.noStroke();
