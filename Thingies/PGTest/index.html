@@ -23,7 +23,9 @@
 		function sketch(processing){
 			processing.draw = function(){
 				processing.background(0,255,128);
-
+				processing.noStroke();
+				processing.fill(255);
+				processing.rect(processing.width/20, processing.height/3, processing.width*9/10, processing.height, processing.width/40);
 			};
 		}
 
