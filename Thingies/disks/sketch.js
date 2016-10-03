@@ -17,8 +17,8 @@ function doStuff() {
   var grow = true;
   while(grow) {
     ++disks[index].dia;
-    for(var i=0; i!=disks.length; ++i) {
-      if(disks[index].olap(disks[i] && i != index)) {
+    for(var i=0; i!=disks.length-1; ++i) {
+      if(disks[index].olap(disks[i])) {
         grow = false;
         return;
       }
