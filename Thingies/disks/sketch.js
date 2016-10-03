@@ -13,39 +13,43 @@ function setup() {
 }
 
 function doStuff() {
-  disks[index] = new disk(random(width), random(height));
+  disks[index] = new Disk(random(width), random(height));
+  console.log(disks);
   var grow = true;
-  while(grow) {
+  while (grow) {
     ++disks[index].dia;
-    for(var i=0; i!=disks.length-1; ++i) {
-      if(disks[index].olap(disks[i])) {
+
+    for (var i = 0; i != index; ++i) {
+      if (disks[index].olap(disks[i])) {
         grow = false;
-        return;
+        break;
       }
     }
   }
   --disk[index].dia;
-  fill(disks[index].c);
+  fill(disks[index].col);
   ellipse(disks[index].x, disks[index].y, disks[index].dia, disks[index].dia);
   ++index;
 }
 
 
-function disk(x, y) {
+function Disk(x, y) {
   this.x = x;
   this.y = y;
   this.min = 10;
   this.max = 100;
   this.dia = this.min;
   this.col = color(random(255), 255, 255);
-  this.olap = olap;
-}
+  this.olap = function(other) {
+    console.log(this.dia);
 
-function olap(other) {
-  if(dist(this.x, this.y, other.x, other.y) < (this.dia/2 + other.dia/2) || this.dia >= this.max) {
-    return true;
-  }
-  else {
-    return false;
-  }
+    if (this.dia > width) {
+      stoppit
+    }
+    if (dist(this.x, this.y, other.x, other.y) < (this.dia / 2 + other.dia / 2) || this.dia >= 100) {
+      return true;
+    } else {
+      return false;
+    }
+  };
 }
