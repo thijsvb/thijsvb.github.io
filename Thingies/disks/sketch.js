@@ -17,7 +17,7 @@ function doStuff() {
 }
 
 
-function disk(x, y) = {
+function disk(x, y) {
   this.x = x;
   this.y = y;
   this.min = 10;
