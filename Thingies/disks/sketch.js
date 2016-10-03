@@ -23,5 +23,5 @@ function disk(x, y) {
   this.min = 10;
   this.max = 100;
   this.d = this.min;
-  this.c = var c = color(random(255), 255, 255);
+  this.c = color(random(255), 255, 255);
 }
