@@ -3,6 +3,7 @@ var button;
 function setup() {
   button = createButton("GO!");
   button.mousePressed(doStuff);
+  createP('');
   createCanvas(1000, 500);
   clear();
   colorMode(HSB);
@@ -10,10 +11,17 @@ function setup() {
 }
 
 function doStuff() {
-  var c = color(random(255), 255, 255);
-  var x = random(width);
-  var y = random(height);
-  var d = random(height/2);
-  fill(c);
-  ellipse(x,y,d,d);
+  var d = new disk(random(width), random(height));
+  fill(d.c);
+  ellipse(d.x,d.y,d.d,d.d);
+}
+
+
+function disk(x, y) = {
+  this.x = x;
+  this.y = y;
+  this.min = 10;
+  this.max = 100;
+  this.d = this.min;
+  this.c = var c = color(random(255), 255, 255);
 }
