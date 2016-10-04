@@ -1,10 +1,13 @@
-var button;
+var goButton;
+var hoButton;
 var disks = [];
 var go = false;
 
 function setup() {
-  button = createButton("GO!");
-  button.mousePressed(startStuff);
+  goButton = createButton("GO!");
+  goButton.mousePressed(startStuff);
+  hoButton = createButton("HO!");
+  hoButton.mousePressed(stopStuff);
   createP('');
   createCanvas(1000, 500);
   clear();
@@ -19,8 +22,17 @@ function draw() {
 }
 
 function startStuff() {
+  clear();
   disks = [];
   go = true;
+}
+
+function stopStuff() {
+  if(go) {
+    go = false;
+  } else {
+    clear();
+  }
 }
 
 function doStuff() {
