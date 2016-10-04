@@ -65,7 +65,7 @@ function doStuff() {
 function Disk(x, y, colA, colB) {
   this.x = x;
   this.y = y;
-  this.min = 10;
+  this.min = 5;
   this.max = 100;
   this.rad = this.min
   this.dia = function(){return this.rad*2;};
