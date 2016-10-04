@@ -26,7 +26,7 @@ function startStuff() {
 function doStuff() {
   var d = new Disk(random(width), random(height));
   
-  while(!d.olap(disks)) {
+  while(d.olap(disks)) {
     d.x = random(width);
     d.y = random(height);
   }
@@ -48,7 +48,7 @@ function Disk(x, y) {
   this.col = color(random(255), 255, 255);
   this.olap = function(other) {
     for(var i=0; i!=other.length; ++i){
-      if (dist(this.x, this.y, other[i].x, other[i].y) < (this.rad + other[i].rad) || this.dia() >= this.max) {
+      if (dist(this.x, this.y, other[i].x, other[i].y) < this.rad + other[i].rad) {
         return true;
       }
     }
