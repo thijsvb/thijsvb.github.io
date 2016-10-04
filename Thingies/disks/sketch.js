@@ -20,6 +20,7 @@ function draw() {
 }
 
 function startStuff() {
+  disks = [];
   go = true;
 }
 
