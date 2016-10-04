@@ -24,10 +24,16 @@ function startStuff() {
 }
 
 function doStuff() {
-  disks[index] = new Disk(random(width), random(height));
+  var d = new Disk(random(width), random(height));
   
-  fill(disks[index].col);
-  ellipse(disks[index].x, disks[index].y, disks[index].dia(), disks[index].dia());
+  while(!d.olap(disks)) {
+    d.x = random(width);
+    d.y = random(height);
+  }
+  
+  fill(d.col);
+  ellipse(d.x, d.y, d.dia(), d.dia());
+  disks[index] = d;
   ++index;
 }
 
@@ -41,10 +47,11 @@ function Disk(x, y) {
   this.dia = function(){return this.rad*2;};
   this.col = color(random(255), 255, 255);
   this.olap = function(other) {
-    if (dist(this.x, this.y, other.x, other.y) < (this.rad + other.rad) || this.dia() >= this.max) {
-      return true;
-    } else {
-      return false;
+    for(var i=0; i!=other.length; ++i){
+      if (dist(this.x, this.y, other[i].x, other[i].y) < (this.rad + other[i].rad) || this.dia() >= this.max) {
+        return true;
+      }
     }
+    return false;
   };
 }
