@@ -43,7 +43,7 @@ function doStuff() {
     d.x = random(width);
     d.y = random(height);
     
-    if(++count > 1000) break;
+    if(++count > 1000) return;
   }
   
   fill(d.col);
