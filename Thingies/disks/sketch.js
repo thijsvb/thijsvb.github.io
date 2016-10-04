@@ -1,15 +1,26 @@
 var button;
 var disks = [];
 var index = 0;
+var go = false;
 
 function setup() {
   button = createButton("GO!");
-  button.mousePressed(doStuff);
+  button.mousePressed(startStuff);
   createP('');
   createCanvas(1000, 500);
   clear();
   colorMode(HSB);
   noStroke();
+}
+
+function draw() {
+  if(go){
+    doStuff();
+  }
+}
+
+function startStuff() {
+  go = true;
 }
 
 function doStuff() {
