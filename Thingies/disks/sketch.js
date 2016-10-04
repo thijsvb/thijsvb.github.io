@@ -16,7 +16,7 @@ function doStuff() {
   disks[index] = new Disk(random(width), random(height));
   
   fill(disks[index].col);
-  ellipse(disks[index].x, disks[index].y, disks[index].dia, disks[index].dia);
+  ellipse(disks[index].x, disks[index].y, disks[index].dia(), disks[index].dia());
   ++index;
 }
 
@@ -30,7 +30,7 @@ function Disk(x, y) {
   this.dia = function(){return this.rad*2;};
   this.col = color(random(255), 255, 255);
   this.olap = function(other) {
-    if (dist(this.x, this.y, other.x, other.y) < (this.rad + other.rad) || this.dia >= this.max) {
+    if (dist(this.x, this.y, other.x, other.y) < (this.rad + other.rad) || this.dia() >= this.max) {
       return true;
     } else {
       return false;
