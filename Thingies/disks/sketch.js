@@ -46,6 +46,11 @@ function doStuff() {
     if(++count > 1000) return;
   }
   
+  while(!d.olap(disks)) {
+    ++d.rad;
+  }
+  --d.rad;
+  
   fill(d.col);
   ellipse(d.x, d.y, d.dia(), d.dia());
   disks[disks.length] = d;
@@ -61,6 +66,10 @@ function Disk(x, y) {
   this.dia = function(){return this.rad*2;};
   this.col = color(random(255), 255, 255);
   this.olap = function(other) {
+    if(this.rad > this.max) {
+      return true;
+    }
+    
     for(var i=0; i!=other.length; ++i){
       if (dist(this.x, this.y, other[i].x, other[i].y) < this.rad + other[i].rad) {
         return true;
