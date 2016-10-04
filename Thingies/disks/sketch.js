@@ -38,9 +38,12 @@ function stopStuff() {
 function doStuff() {
   var d = new Disk(random(width), random(height));
   
+  var count = 0;
   while(d.olap(disks)) {
     d.x = random(width);
     d.y = random(height);
+    
+    if(++count > 1000) break;
   }
   
   fill(d.col);
