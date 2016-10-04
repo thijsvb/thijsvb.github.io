@@ -1,6 +1,5 @@
 var button;
 var disks = [];
-var index = 0;
 var go = false;
 
 function setup() {
@@ -34,8 +33,7 @@ function doStuff() {
   
   fill(d.col);
   ellipse(d.x, d.y, d.dia(), d.dia());
-  disks[index] = d;
-  ++index;
+  disks[disks.length] = d;
 }
 
 
