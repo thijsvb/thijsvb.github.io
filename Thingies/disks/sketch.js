@@ -1,4 +1,4 @@
-var goButton, hoButton;
+var goButton, hoButton, box;
 var disks = [];
 var tCol, mCol, bCol;
 var go = false;
@@ -8,6 +8,9 @@ function setup() {
   goButton.mousePressed(startStuff);
   hoButton = createButton("HO!");
   hoButton.mousePressed(stopStuff);
+  var p = createP("show random tries");
+  box = createCheckbox();
+  p.child(box);
   var ln = createP('');
   var can = createCanvas(1000, 500);
 
@@ -67,11 +70,11 @@ function doStuff() {
     ranY = random(height);
     d.x = ranX;
     d.y = ranY;
-    stroke(0);
-    fill(255);
-    ellipse(ranX, ranY, 10, 10);
-    noStroke();
-
+    
+    if(box.checked()) {
+      fill(255);
+      ellipse(ranX, ranY, 10, 10);
+    }
     if(++count > 1000) return;
   }
 
