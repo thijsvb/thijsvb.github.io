@@ -15,8 +15,8 @@ function setup() {
   middle.child(goButton);
   middle.child(hoButton);
   middle.child(ln);
-  viddle.child(can);
-  
+  middle.child(can);
+
   clear();
   colorMode(HSB);
   noStroke();
