@@ -29,11 +29,11 @@ function setup() {
 function draw() {
   if(go){
     clear();
-    doStuff();
     for(var i=0; i!=disks.length; ++i){
       fill(disks[i].col());
       ellipse(disks[i].x, disks[i].y, disks[i].dia(), disks[i].dia());
     }
+    doStuff();
   }
 }
 
