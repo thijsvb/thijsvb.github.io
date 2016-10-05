@@ -24,7 +24,12 @@ function setup() {
 
 function draw() {
   if(go){
+    clear();
     doStuff();
+    for(int i=0; i!=disks.length; ++i){
+      fill(disks[i].col());
+      ellipse(disks[i].x, disks[i].y, disks[i].dia(), disks[i].dia());
+    }
   }
 }
 
@@ -47,12 +52,20 @@ function stopStuff() {
 }
 
 function doStuff() {
-  var d = new Disk(random(width), random(height), tCol, mCol, bCol);
+  var ranX = random(width);
+  var ranY = random(height);
+  var d = new Disk(ranX, ranY, tCol, mCol, bCol);
 
   var count = 0;
   while(d.olap(disks)) {
-    d.x = random(width);
-    d.y = random(height);
+    ranX = random(width);
+    ranY = random(height);
+    d.x = ranX;
+    d.y = ranY;
+    stroke(0);
+    fill(255);
+    ellipse(ranX, ranY, 10, 10);
+    noStroke();
 
     if(++count > 1000) return;
   }
@@ -62,8 +75,6 @@ function doStuff() {
   }
   --d.rad;
 
-  fill(d.col());
-  ellipse(d.x, d.y, d.dia(), d.dia());
   disks[disks.length] = d;
 }
 
