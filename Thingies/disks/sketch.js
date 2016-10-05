@@ -1,6 +1,6 @@
 var goButton, hoButton;
 var disks = [];
-var tCol, bCol;
+var tCol, mCol, bCol;
 var go = false;
 
 function setup() {
@@ -26,7 +26,8 @@ function startStuff() {
   disks = [];
   var h = random(255);
   tCol = color(h, 255, 255);
-  bCol = color((h+128)%256, 255, 255);
+  mCol = color((h+75)%256, 255, 255);
+  bCol = color((h+171)%256, 255, 255);
   console.log(h);
   console.log(tCol);
   go = true;
@@ -41,7 +42,7 @@ function stopStuff() {
 }
 
 function doStuff() {
-  var d = new Disk(random(width), random(height), tCol, bCol);
+  var d = new Disk(random(width), random(height), tCol, mCol, bCol);
 
   var count = 0;
   while(d.olap(disks)) {
@@ -62,14 +63,20 @@ function doStuff() {
 }
 
 
-function Disk(x, y, colA, colB) {
+function Disk(x, y, colA, colB, colC) {
   this.x = x;
   this.y = y;
   this.min = 5;
   this.max = 100;
   this.rad = this.min
   this.dia = function(){return this.rad*2;};
-  this.col = function(){return lerpColor(colA, colB, this.y/height);};
+  this.col = function(){
+    if(this.y < height/2){
+      return lerpColor(colA, colB, this.y/(height/2));
+    } else {
+      return lerpColor(colB, colC, (this.y-height/2)/(height/2));
+    }
+  };
   this.olap = function(other) {
     if(this.rad > this.max) {
       return true;
