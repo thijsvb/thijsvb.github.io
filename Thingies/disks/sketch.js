@@ -26,7 +26,7 @@ function draw() {
   if(go){
     clear();
     doStuff();
-    for(int i=0; i!=disks.length; ++i){
+    for(var i=0; i!=disks.length; ++i){
       fill(disks[i].col());
       ellipse(disks[i].x, disks[i].y, disks[i].dia(), disks[i].dia());
     }
