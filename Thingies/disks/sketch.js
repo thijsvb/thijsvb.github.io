@@ -8,15 +8,16 @@ function setup() {
   goButton.mousePressed(startStuff);
   hoButton = createButton("HO!");
   hoButton.mousePressed(stopStuff);
-  var p = createP("show random tries");
+  var d = createDiv("show random tries");
   box = createCheckbox();
-  p.child(box);
+  d.child(box);
   var ln = createP('');
   var can = createCanvas(1000, 500);
 
   var middle = select('#middle');
   middle.child(goButton);
   middle.child(hoButton);
+  middle.child(d);
   middle.child(ln);
   middle.child(can);
 
