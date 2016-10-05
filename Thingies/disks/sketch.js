@@ -8,8 +8,15 @@ function setup() {
   goButton.mousePressed(startStuff);
   hoButton = createButton("HO!");
   hoButton.mousePressed(stopStuff);
-  createP('');
-  createCanvas(1000, 500);
+  var ln = createP('');
+  var can = createCanvas(1000, 500);
+
+  var middle = select('#middle');
+  middle.child(goButton);
+  middle.child(hoButton);
+  middle.child(ln);
+  viddle.child(can);
+  
   clear();
   colorMode(HSB);
   noStroke();
@@ -28,8 +35,6 @@ function startStuff() {
   tCol = color(h, 255, 255);
   mCol = color((h+75)%256, 255, 255);
   bCol = color((h+171)%256, 255, 255);
-  console.log(h);
-  console.log(tCol);
   go = true;
 }
 
@@ -67,7 +72,7 @@ function Disk(x, y, colA, colB, colC) {
   this.x = x;
   this.y = y;
   this.min = 5;
-  this.max = 100;
+  this.max = 75;
   this.rad = this.min
   this.dia = function(){return this.rad*2;};
   this.col = function(){
