@@ -3,7 +3,7 @@ var bf, code, email;
 function setup() {
   var can = createCanvas(400, 100);
   var middle = select("#middle");
-  can.child(middle);
+  middle.child(can);
   bf = new BFJSInterpreter();
   loadStrings("email.txt", gotCode);
 }
@@ -17,6 +17,6 @@ function gotCode(txt) {
   background(32);
   fill(255);
   textAlign(CENTER, CENTER);
-  textSize(64);
+  textSize(32);
   text(email, width/2, height/2);
 }
