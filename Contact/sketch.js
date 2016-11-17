@@ -1,4 +1,6 @@
-var bf, code, email, loaded, path = [];
+var bf, code, email, loaded;
+var path = [];
+var following = false;
 
 function setup() {
   var can = createCanvas(400, 100);
@@ -37,5 +39,17 @@ function draw() {
   
   for(var i=0; i!=path.length; ++i) {
     point(path[i].x, path[i].y);
+  }
+  
+  if (following){
+    ellipse(mouseX, mouseY, 20, 20);
+    var onLine = false;
+    for (var i=0; i!=path.length; ++i){
+      if (dist(mouseX, mouseY, path[i].x, path[i].y) < 10) onLine = true;
+    }
+    if (!onLine) following = false;
+  } else {
+    ellipse(0, path[0].y, 20, 20);
+    if (dist(mouseX, mouseY, 0, path[0].y) < 10) following = true;
   }
 }
