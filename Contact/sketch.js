@@ -1,7 +1,7 @@
 var bf, code, email;
 
 function setup() {
-  var can = createCanvas(800, 400);
+  var can = createCanvas(400, 100);
   var middle = select("#middle");
   can.child(middle);
   bf = new BFJSInterpreter();
@@ -12,7 +12,6 @@ function gotCode(txt) {
   code = txt[0];
   
   bf.execute(code);
-  console.log(bf.outStream);
   email = bf.outStream;
   
   background(0);
