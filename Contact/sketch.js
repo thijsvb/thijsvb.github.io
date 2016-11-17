@@ -10,7 +10,6 @@ function setup() {
   for (var i=0; i!=width; ++i) {
     path[i] = pathPoint(i);
   }
-  noiseSeed(14);
   
   fill(255);
   stroke(0, 176, 0);
@@ -26,6 +25,7 @@ function gotCode(txt) {
 }
 
 function pathPoint(x) {
+  noiseSeed(14);
   var off = x/100;
   var y = noise(off) * height;
   return new p5.Vector(x, y);  
