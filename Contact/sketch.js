@@ -1,6 +1,6 @@
 var bf, code, email, loaded;
 var path = [];
-var following = false;
+var following = false, won = false;
 
 function setup() {
   var can = createCanvas(400, 100);
@@ -41,6 +41,11 @@ function draw() {
     point(path[i].x, path[i].y);
   }
   
+  if (won) {
+    text(email, mouseX, mouseY);
+    return;
+  }
+  
   if (following){
     ellipse(mouseX, mouseY, 20, 20);
     var onLine = false;
@@ -52,4 +57,6 @@ function draw() {
     ellipse(0, path[0].y, 20, 20);
     if (dist(mouseX, mouseY, 0, path[0].y) < 10) following = true;
   }
+  
+  if (following && mouseX > width - 10) won = true;
 }
