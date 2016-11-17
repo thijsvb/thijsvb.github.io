@@ -14,8 +14,9 @@ function gotCode(txt) {
   bf.execute(code);
   email = bf.outStream;
   
-  background(0);
+  background(32);
   fill(255);
   textAlign(CENTER, CENTER);
+  textSize(64);
   text(email, width/2, height/2);
 }
