@@ -22,5 +22,5 @@ function gotCode(txt) {
 
 function draw() {
   if(!loaded) return;
-  text(email, width/2, height/2);
+  text(email, mouseX, mouseY);
 }
