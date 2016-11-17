@@ -1,4 +1,4 @@
-var bf, code, email, loaded;
+var bf, code, email, loaded, path = [];
 
 function setup() {
   var can = createCanvas(400, 100);
@@ -7,8 +7,12 @@ function setup() {
   bf = new BFJSInterpreter();
   loadStrings("email.txt", gotCode);
   
-  background(32);
+  for (var i=0; i!=width; ++i) {
+    path[i] = pathPoint(i);
+  }
+  
   fill(255);
+  stroke(0, 176, 0);
   textAlign(CENTER, CENTER);
   textSize(32);
 }
@@ -20,7 +24,17 @@ function gotCode(txt) {
   loaded = true;
 }
 
+function pathPoint(x) {
+  var off = x/100;
+  var y = noise(off) * height;
+  return new p5.Vector(x, y);  
+}
+
 function draw() {
+  background(32);
   if(!loaded) return;
-  text(email, mouseX, mouseY);
+  
+  for(p5.Vector v : path) {
+    point(v.x, v.y);
+  }
 }
