@@ -34,7 +34,7 @@ function draw() {
   background(32);
   if(!loaded) return;
   
-  for(p5.Vector v : path) {
-    point(v.x, v.y);
+  for(var i=0; i!=path.length; ++i) {
+    point(path[i].x, path[i].y);
   }
 }
