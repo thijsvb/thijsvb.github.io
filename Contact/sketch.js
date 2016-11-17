@@ -25,7 +25,7 @@ function gotCode(txt) {
 }
 
 function pathPoint(x) {
-  noiseSeed(31615354085);
+  noiseSeed(58045351613);
   var off = x/100;
   var y = noise(off) * height;
   return new p5.Vector(x, y);  
