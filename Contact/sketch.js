@@ -10,6 +10,7 @@ function setup() {
   for (var i=0; i!=width; ++i) {
     path[i] = pathPoint(i);
   }
+  noiseSeed(14);
   
   fill(255);
   stroke(0, 176, 0);
