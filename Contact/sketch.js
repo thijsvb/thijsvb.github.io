@@ -1,4 +1,4 @@
-var bf, code, email = " ", loaded;
+var bf, code, email = " ";
 var path = [];
 var following = false, won = false;
 
@@ -27,7 +27,6 @@ function pathPoint(x) {
 
 function draw() {
   background(32);
-  if(!loaded) return;
 
   for(var i=0; i!=path.length; ++i) {
     point(path[i].x, path[i].y);
@@ -60,5 +59,4 @@ function gotCode(txt) {
   code = txt[0];
   bf.execute(code);
   email = bf.outStream;
-  loaded = true;
 }
