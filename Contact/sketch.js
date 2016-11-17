@@ -12,6 +12,8 @@ function gotCode(txt) {
   code = txt[0];
   
   bf.execute(code);
+  console.log(bf.outputStream);
+  console.log(bf.outputStream());
   email = bf.outputStream;
   
   background(0);
