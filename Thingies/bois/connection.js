@@ -5,15 +5,13 @@ function Connection(a, b, s) {
 }
 
 Connection.prototype.pull = function() {
-  var dir = this.b.pos.copy();
-  dir.sub(this.a.pos);
-  dir.setMag(this.strength);
-  this.a.addForce(dir);
-
-  var dir = this.a.pos.copy();
-  dir.sub(this.b.pos);
-  dir.setMag(this.strength);
+  // F = C * u
+  var u = p5.Vector.dist(this.a.pos, this.b.pos) * this.strength;
+  var dir = this.a.pos.copy().sub(this.b.pos).setMag(u);
   this.b.addForce(dir);
+
+  var odir = this.b.pos.copy().sub(this.a.pos).setMag(u);
+  this.a.addForce(odir);
 }
 
 Connection.prototype.show = function() {

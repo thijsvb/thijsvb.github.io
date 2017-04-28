@@ -19,3 +19,12 @@ Thing.prototype.show = function() {
   noFill();
   ellipse(this.pos.x, this.pos.y, 10, 10);
 }
+
+Thing.prototype.repel = function(t) {
+  var dir = t.pos.copy();
+  dir.sub(this.pos);
+  dir.setMag(-1);
+  var dist = p5.Vector.dist(this.pos, t.pos);
+  dir.mult(10/(dist*dist));
+  this.addForce(dir);
+}
